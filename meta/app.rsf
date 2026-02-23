@@ -1,0 +1,31 @@
+; Claudium3DS CIA RSF metadata
+BasicInfo:
+    Title           : Claudium3DS
+    CompanyCode     : 00
+    ProductCode     : CTR-P-CLAI
+    ContentType     : Application
+    Logo            : Licensed
+
+RomFs:
+    RootPath        : romfs
+
+ExeFs:
+    EnableCompress  : true
+
+Option:
+    UseOnSD         : true
+    FreeProductCode : true
+
+AccessControlInfo:
+    FileSystemAccess:
+        - Application
+        - CardSpiWrite
+        - DirectSdmc
+    IoAccessControl: 0x00000000
+    OtherUserSaveDataAccess: None
+
+SystemControlInfo:
+    SaveDataSize    : 0x200000
+    RemasterVersion : 0
+    StackSize       : 0x8000
+    MaxCpu          : 100

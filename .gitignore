@@ -1,0 +1,12 @@
+build/
+*.3dsx
+*.cia
+*.elf
+*.smdh
+*.bnr
+*.icn
+*.3ds
+*.cci
+*.app
+*.ncch
+*.ncsd
