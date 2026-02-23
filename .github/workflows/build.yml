@@ -20,7 +20,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install 3DS packages
-        run: dkp-pacman --noconfirm -Syu 3ds-dev 3ds-curl 3ds-mbedtls
+        run: |
+          dkp-pacman --noconfirm -Sy
+          dkp-pacman --noconfirm -S 3ds-dev 3ds-curl 3ds-mbedtls
 
       - name: Build .3dsx and .smdh
         run: make
