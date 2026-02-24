@@ -21,8 +21,13 @@ jobs:
 
       - name: Install 3DS packages
         run: |
-          dkp-pacman --noconfirm -Sy
-          dkp-pacman --noconfirm -S 3ds-dev 3ds-curl 3ds-mbedtls
+          # Retry DB sync up to 3 times (pkg.devkitpro.org can rate-limit CI)
+          for i in 1 2 3; do
+            dkp-pacman --noconfirm -Sy && break
+            echo "Sync attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
+          dkp-pacman --noconfirm -S --needed 3ds-dev 3ds-curl 3ds-mbedtls
 
       - name: Build .3dsx and .smdh
         run: make
