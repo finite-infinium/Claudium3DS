@@ -30,6 +30,6 @@ AccessControlInfo:
     SpecialMemoryArrange   : true
 
 SystemControlInfo:
-    SaveDataSize    : 0x200000
+    SaveDataSize    : 2MB
     RemasterVersion : 0
     StackSize       : 0x8000
