@@ -9,7 +9,12 @@ $(error "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>/de
 endif
 
 TOPDIR ?= $(CURDIR)
+# Support both old devkitPro (rules/3ds.mk) and new (devkitARM/3ds_rules)
+ifeq ($(wildcard $(DEVKITPRO)/rules/3ds.mk),)
+include $(DEVKITPRO)/devkitARM/3ds_rules
+else
 include $(DEVKITPRO)/rules/3ds.mk
+endif
 
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output

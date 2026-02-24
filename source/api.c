@@ -8,6 +8,7 @@
 #ifdef __3DS__
 #include <3ds.h>
 #include <curl/curl.h>
+#include <malloc.h>
 
 /* libctru socket heap */
 #define SOC_BUFFER_SIZE  (0x100000)  /* 1 MB */

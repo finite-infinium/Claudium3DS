@@ -3,6 +3,9 @@
 #define INPUT_H
 
 #include <stdbool.h>
+#ifdef __3DS__
+#include <3ds.h>
+#endif
 #include "ui.h"
 #include "config.h"
 
