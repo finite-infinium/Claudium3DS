@@ -6,26 +6,30 @@ BasicInfo:
     ContentType     : Application
     Logo            : Licensed
 
-RomFs:
-    RootPath        : romfs
-
-ExeFs:
-    EnableCompress  : true
-
 Option:
     UseOnSD         : true
     FreeProductCode : true
+    EnableCompress  : true
 
 AccessControlInfo:
     FileSystemAccess:
-        - Application
-        - CardSpiWrite
         - DirectSdmc
-    IoAccessControl: 0x00000000
-    OtherUserSaveDataAccess: None
+    MaxCpu          : 100
+    MemoryType      : Application
+    SystemMode      : 64MB
+    SystemModeExt   : Legacy
+    IdealProcessor  : 0
+    AffinityMask    : 1
+    Priority        : 16
+    HandleTableSize : 0x200
+    DisableDebug    : false
+    CanWriteSharedPage     : true
+    CanUseNonAlphabetAndNumber : true
+    PermitMainFunctionArgument : true
+    CanShareDeviceMemory   : true
+    SpecialMemoryArrange   : true
 
 SystemControlInfo:
     SaveDataSize    : 0x200000
     RemasterVersion : 0
     StackSize       : 0x8000
-    MaxCpu          : 100
