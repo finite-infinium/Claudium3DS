@@ -140,6 +140,7 @@ cia: $(BUILD)
 	@makerom -f cia \
 		-target t \
 		-exefslogo \
+		-desc app:4 \
 		-o $(TARGET).cia \
 		-elf $(TARGET).elf \
 		-rsf $(TOPDIR)/meta/app.rsf \

@@ -1,4 +1,7 @@
 # Claudium3DS CIA RSF metadata
+# makerom is invoked with -desc app:4 which supplies the ExHeader/
+# AccessControlInfo defaults. Only BasicInfo, TitleInfo and Option
+# are needed here.
 BasicInfo:
     Title           : Claudium3DS
     CompanyCode     : 00
@@ -6,28 +9,14 @@ BasicInfo:
     ContentType     : Application
     Logo            : Licensed
 
+TitleInfo:
+    Category        : Application
+    UniqueId        : 0xFF3FF
+
 Option:
     UseOnSD         : true
     FreeProductCode : true
     EnableCompress  : true
-
-AccessControlInfo:
-    FileSystemAccess:
-        - DirectSdmc
-    MaxCpu          : 100
-    MemoryType      : Application
-    SystemMode      : 64MB
-    SystemModeExt   : Legacy
-    IdealProcessor  : 0
-    AffinityMask    : 1
-    Priority        : 16
-    HandleTableSize : 0x200
-    DisableDebug    : false
-    CanWriteSharedPage     : true
-    CanUseNonAlphabetAndNumber : true
-    PermitMainFunctionArgument : true
-    CanShareDeviceMemory   : true
-    SpecialMemoryArrange   : true
 
 SystemControlInfo:
     SaveDataSize    : 2MB
